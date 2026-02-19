@@ -1,0 +1,42 @@
+#Calculation for lambda, partial charge, in this README file I will show calculation for rep1. 
+
+# packages
+import subprocess
+import os
+import glob
+from collections import defaultdict
+import numpy as np
+from scipy.stats import linregress
+import pandas as pd
+import matplotlib.pyplot as plt
+import glob
+
+
+#Step1: run step1.py to determine N_prot and N_unprot after each step_size. All data will be written in output.sx. Change for pH 3, ..., 7.
+
+#Step2: extra values from output.sx by using step2.py.
+
+#Step3: run step3.py, we obtained pKa values, titration curve.
+
+#Step4: run step4.py, all pKa values of all residues were obtained in this file name "pKa_summary_rep1.dat", remember to "#" heading title.
+
+#Step5: Run step5.py to plot pKa and mean, then copy mean values into step6.py.
+
+#Step6: Run step6.py. We compare simulated pKa values and delta pKa shift. 
+
+#Step7: Run step7.py. You can plot titration curve of all residues at anytime, used parameters a0, and a1 from file.fit.
+
+
+#Step8-10 Run step8.py, step9.py and step10.py to plot the eluvation lambda and partial charge 
+
+#Step8: Extra values of each residues and save with name ph3-asp6.dat, ....Then renumber frame so that plot lambda or partial charge during time become easier. 
+
+Command to extract: awk '{print $2, $3}' ph3-rep1.lamb > ph3-asp6.dat
+
+#Remember to delete all # lines in file ph3-asp6.dat, now run step8.py, we get ph3-asp6-new.dat, using this file to calculate partial charge (step9.py).
+
+#Run step10.py, we get partial charge of Asp6 at pH = 3, output file "ph3-asp6-charge.dat"
+use this file to 1) plot lambda by using and 2) calculate partial charge, using step10.py. 
+#Run step11.py to plot deprot_fraction (S). 
+
+
